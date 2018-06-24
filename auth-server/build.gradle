@@ -1,0 +1,19 @@
+group = 'io.github.solomkinmv.glossary'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 10
+
+dependencies {
+    compile 'org.springframework.cloud:spring-cloud-starter-config'
+    compile 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.cloud:spring-cloud-starter-security'
+    compile 'org.springframework.cloud:spring-cloud-starter-oauth2'
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    compile 'org.springframework.security:spring-security-oauth2-client'
+    compile 'org.springframework.security:spring-security-oauth2-jose'
+    compile 'org.springframework:spring-webflux'
+    compile 'io.projectreactor.ipc:reactor-netty'
+
+    compileOnly 'org.projectlombok:lombok'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+}

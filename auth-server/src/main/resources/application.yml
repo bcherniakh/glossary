@@ -1,0 +1,25 @@
+# todo: move this to config service
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 622600811225-aptkq00973iqnlvo2a6i6v0oec381m91.apps.googleusercontent.com
+            client-secret: Q9TiW2jMVWZOsp4RCXUWk_8w
+          github:
+            client-id: cf198b9fb1aecc2cd4b1
+            client-secret: 49aecde2362177217bbc356e9ba16cd27252fd61
+          facebook:
+            client-id: 249449982304385
+            client-secret: 4dba09900ed6114f614569a4aa75e68e
+          okta:
+            client-id: 0oafhm4f7sJKqs8OR0h7
+            client-secret: f0kGS5AWWA1XO9Y1d4JZfXoZe96X9N1LfJ321ide
+        provider:
+          okta:
+            authorization-uri: https://dev-709967.oktapreview.com/oauth2/v1/authorize
+            token-uri: https://dev-709967.oktapreview.com/oauth2/v1/token
+            user-info-uri: https://dev-709967.oktapreview.com/oauth2/v1/userinfo
+            user-name-attribute: sub
+            jwk-set-uri: https://dev-709967.oktapreview.com/oauth2/v1/keys
