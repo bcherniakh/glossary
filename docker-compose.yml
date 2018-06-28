@@ -121,3 +121,23 @@ services:
       options:
         max-size: "10m"
         max-file: "10"
+
+  keycloak:
+    image: jboss/keycloak
+    ports:
+    - "8000:8080"
+    environment:
+    - KEYCLOAK_LOGLEVEL=DEBUG
+    - PROXY_ADDRESS_FORWARDING=true
+    - KEYCLOAK_USER=keycloak
+    - KEYCLOAK_PASSWORD=keycloak
+    depends_on:
+    - keycloak-mysql
+
+  keycloak-mysql:
+    image: mariadb
+    environment:
+    - MYSQL_ROOT_PASSWORD=root
+    - MYSQL_DATABASE=keycloak
+    - MYSQL_USER=keycloak
+    - MYSQL_PASSWORD=password
