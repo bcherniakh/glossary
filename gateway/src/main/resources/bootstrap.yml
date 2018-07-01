@@ -8,3 +8,15 @@ spring:
       fail-fast: true
 
 management.endpoints.web.expose: '*'
+
+logging.level:
+  io.github.solomkinmv: DEBUG
+  org.springframework.security: DEBUG
+  org.springframework: DEBUG
+  org:
+    springframework:
+      cloud:
+        netflix: trace
+
+debug: true
+trace: true

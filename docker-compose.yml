@@ -122,6 +122,7 @@ services:
         max-size: "10m"
         max-file: "10"
 
+  # todo: use env variables
   keycloak:
     image: jboss/keycloak
     ports:

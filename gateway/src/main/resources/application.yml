@@ -1,0 +1,62 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 622600811225-aptkq00973iqnlvo2a6i6v0oec381m91.apps.googleusercontent.com
+            client-secret: ${GOOGLE_OAUTH2_CLIENT_SECRET}
+          github:
+            client-id: cf198b9fb1aecc2cd4b1
+            client-secret: ${GITHUB_OAUTH2_CLIENT_SECRET}
+          facebook:
+            client-id: 249449982304385
+            client-secret: ${FACEBOOK_OAUTH2_CLIENT_SECRET}
+          okta:
+            client-id: 0oafhm4f7sJKqs8OR0h7
+            client-secret: ${OKTA_OAUTH2_CLIENT_SECRET}
+          keycloak:
+            client-id: glossary-web-client
+            client-secret: ${KEYCLOAK_OAUTH2_CLIENT_SECRET}
+            clientName: Keycloak
+            authorization-grant-type: authorization_code
+            redirectUriTemplate: '{baseUrl}/login/oauth2/code/{registrationId}'
+            scope:
+            - openid
+            - profile
+            - email
+        provider:
+          okta:
+            authorization-uri: https://dev-709967.oktapreview.com/oauth2/v1/authorize
+            token-uri: https://dev-709967.oktapreview.com/oauth2/v1/token
+            user-info-uri: https://dev-709967.oktapreview.com/oauth2/v1/userinfo
+            user-name-attribute: sub
+            jwk-set-uri: https://dev-709967.oktapreview.com/oauth2/v1/keys
+          keycloak:
+            authorization-uri: http://localhost:8000/auth/realms/glossary/protocol/openid-connect/auth
+            token-uri: http://localhost:8000/auth/realms/glossary/protocol/openid-connect/token
+            user-info-uri: http://localhost:8000/auth/realms/glossary/protocol/openid-connect/userinfo
+            jwk-set-uri: http://localhost:8000/auth/realms/glossary/protocol/openid-connect/certs
+            user-name-attribute: preferred_username
+
+zuul:
+  ignoredHeaders:
+  - authorization
+
+logging.level:
+  io.github.solomkinmv: DEBUG
+  org.springframework.security: DEBUG
+  org.springframework: DEBUG
+  org:
+    springframework:
+      cloud:
+        netflix: trace
+
+debug: true
+trace: true
+
+zuul.include-debug-header: true
+
+zuul:
+  sensitive-headers: Cookie,Set-Cookie
+  sensitiveHeaders: Cookie,Set-Cookie
