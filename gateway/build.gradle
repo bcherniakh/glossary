@@ -21,6 +21,11 @@ dependencies {
     compile jaxbImpl// should be included as external dependency because of java 9
     compile activation// should be included as external dependency because of java 9
 
+//    web, todo: should be removed
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    compile 'org.springframework:spring-webflux'
+    compile 'io.projectreactor.ipc:reactor-netty'
+
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 

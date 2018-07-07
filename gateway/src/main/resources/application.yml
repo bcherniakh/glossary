@@ -40,8 +40,11 @@ spring:
             user-name-attribute: preferred_username
 
 zuul:
-  ignoredHeaders:
+  ignored-headers:
   - authorization
+  include-debug-header:
+    true
+  sensitive-headers: Cookie,Set-Cookie
 
 logging.level:
   io.github.solomkinmv: DEBUG
@@ -54,9 +57,3 @@ logging.level:
 
 debug: true
 trace: true
-
-zuul.include-debug-header: true
-
-zuul:
-  sensitive-headers: Cookie,Set-Cookie
-  sensitiveHeaders: Cookie,Set-Cookie
